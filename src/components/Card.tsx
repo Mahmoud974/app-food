@@ -92,10 +92,10 @@ export default function CardFood({
                 <SelectItem value="5">5</SelectItem>
               </SelectContent>
             </Select>
-            <Button className="  bg-orange-600 cursor-pointer hover:bg-black">
+            <Button className="  bg-orange-600 cursor-pointer hover:bg-green-600">
               <Pencil />
             </Button>
-            <Button className="   bg-black  hover:bg-orange-600 cursor-pointer">
+            <Button className="  ≈cursor-pointer hover:bg-orange-600">
               <ShoppingBasket />
             </Button>
           </div>

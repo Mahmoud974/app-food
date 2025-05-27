@@ -62,7 +62,7 @@ export default function Basket() {
   };
 
   return (
-    <main className="bg-white w-full h-full  rounded-2xl">
+    <main className="bg-white w-full h-full shadow-md rounded-2xl">
       <div className="p-7">
         <div className="flex justify-between items-center mb-6">
           <div>
