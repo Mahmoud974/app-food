@@ -52,7 +52,7 @@ export default function CardFood({
         </div>
       </CardHeader>
       <CardContent>
-        <div className="flex flex-col space-y-3">
+        <div className="flex flex-col  ">
           <div className="flex items-center gap-2">
             <Select defaultValue="medium">
               <SelectTrigger className="w-full">

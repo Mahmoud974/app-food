@@ -79,8 +79,7 @@ export default function Basket() {
           </div>
         </div>
 
-        {/* Boutons de type de commande */}
-        <div className="flex justify-between items-center bg-gray-100 rounded-full p-1 w-full max-w-md mb-6">
+        <div className="flex justify-between items-center bg-gray-100 rounded-full p-1 w-full max-w-xs mx-auto mb-6">
           {["Dine in", "Take Away", "Delivery"].map((type) => (
             <button
               key={type}
@@ -96,7 +95,6 @@ export default function Basket() {
           ))}
         </div>
 
-        {/* Coupon */}
         <div className="mt-7 space-y-4">
           <h3 className="text-md font-bold">Ajouter un code coupon</h3>
           <div className="flex items-center bg-gray-100 rounded-md p-1 w-full max-w-md">
@@ -111,7 +109,6 @@ export default function Basket() {
           </div>
         </div>
 
-        {/* Liste des articles */}
         <div className="mt-7 space-y-4">
           <h3 className="text-md font-bold">Détail de la commande</h3>
           {items.map((item, idx) => (
@@ -148,7 +145,6 @@ export default function Basket() {
           ))}
         </div>
 
-        {/* Résumé */}
         <div className="bg-gray-50 text-gray-600 rounded-md my-4 h-auto p-3 space-y-2">
           <div className="flex justify-between">
             <p>Total</p>
@@ -165,14 +161,12 @@ export default function Basket() {
           </div>
         </div>
 
-        {/* Bouton commander */}
         <div className="mt-7">
           <button className="bg-orange-600 text-white w-full py-2 rounded-md">
             Commander
           </button>
         </div>
 
-        {/* Suggestions */}
         <div className="mt-10 bg-gray-50 rounded-xl p-4">
           <h3 className="font-semibold text-lg mb-3">Vous pourriez aimer :</h3>
           <div className="space-y-2">

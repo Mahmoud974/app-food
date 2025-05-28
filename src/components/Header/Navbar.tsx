@@ -1,9 +1,22 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 import { motion } from "framer-motion";
 
 export default function Navbar() {
+  const pathname = usePathname();
+
+  const pages = [
+    { label: "Home", path: "/" },
+    { label: "Pizzas", path: "/pizzas" },
+    { label: "Burgers", path: "/burgers" },
+    { label: "Tacos", path: "/tacos" },
+    { label: "Salades", path: "/salades" },
+    { label: "Desserts", path: "/desserts" },
+    { label: "Boissons", path: "/boissons" },
+  ];
+
   return (
     <motion.nav
       initial={{ y: -50, opacity: 0 }}
@@ -18,25 +31,31 @@ export default function Navbar() {
           </h1>
 
           <ul className="flex gap-10 text-sm font-medium text-gray-700">
-            {[
-              "home",
-              "pizzas",
-              "burgers",
-              "tacos",
-              "salades",
-              "desserts",
-              "boissons",
-            ].map((page, index) => (
-              <motion.li
-                key={page}
-                whileHover={{ scale: 1.1, color: "#ea580c" }} // couleur orange-600
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Link href={`/${page}`}>
-                  {page.charAt(0).toUpperCase() + page.slice(1)}
-                </Link>
-              </motion.li>
-            ))}
+            {pages.map((page) => {
+              const isActive =
+                page.path === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(page.path);
+
+              return (
+                <motion.li
+                  key={page.label}
+                  whileHover={{ scale: 1.1, color: "#ea580c" }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Link
+                    href={page.path}
+                    className={
+                      isActive
+                        ? "text-orange-600 border-b-2 border-orange-600 pb-1"
+                        : ""
+                    }
+                  >
+                    {page.label}
+                  </Link>
+                </motion.li>
+              );
+            })}
           </ul>
         </div>
 

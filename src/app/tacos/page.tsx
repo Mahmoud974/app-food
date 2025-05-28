@@ -1,5 +1,15 @@
+import FoodLayout from "../layouts/FoodLayout";
+import CardFood from "@/components/Card";
 import React from "react";
 
-export default function page() {
-  return <div>Tacos</div>;
+export default function PizzasPage() {
+  return (
+    <FoodLayout title="Les Tacos">
+      <div className="grid grid-cols-4 gap-2 flex-wrap">
+        {[...new Array(14)].map((_, index) => (
+          <CardFood key={`pizza-${index}`} />
+        ))}
+      </div>
+    </FoodLayout>
+  );
 }
