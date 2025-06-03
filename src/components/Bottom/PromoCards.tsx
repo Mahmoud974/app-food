@@ -1,63 +1,53 @@
 "use client";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 
 const promos = [
   {
     title: "Carte Edenred Ticket Restaurant",
-    img: "/edenred-pizza.jpg",
+    img: "/helpBloc/1.jpg",
   },
   {
     title: "Meilleure enseigne de pizza",
     subtitle: "2024 - 2025",
     description: "pour la 8e année consécutive",
-    img: "/trophee-pizza.jpg",
+    img: "/helpBloc/2.jpg",
   },
   {
     title: "Le nutri-score de nos produits",
-    img: "/nutri-score.jpg",
+    img: "/helpBloc/3.jpg",
   },
   {
     title: "En exclu sur l'app Royal Tacos",
     description: "-10% sur les menus",
-    img: "/promo-app.jpg",
+    img: "/helpBloc/4.jpg",
   },
 ];
 
 export default function PromoCards() {
   return (
-    <section className="  py-12 px-4">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section className="py-12 px-4 bg-white">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
         {promos.map((promo, idx) => (
-          <div
-            key={idx}
-            className="bg-[#fff] flex flex-col items-center text-center rounded-none"
-          >
-            <div className="relative w-64 h-64">
-              <Image
-                src={promo.img}
-                alt={promo.title}
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            {/* Texte */}
-            <div className="p-4 text-black space-y-1 min-h-[120px] flex flex-col justify-center">
-              <h3 className="text-lg font-extrabold">{promo.title}</h3>
-              {promo.subtitle && (
-                <p className="text-sm font-semibold text-gray-700">
-                  {promo.subtitle}
-                </p>
-              )}
-              {promo.description && (
-                <p className="text-[#0076b8] text-sm">{promo.description}</p>
+          <div key={idx} className="flex flex-col items-center">
+            <div className="w-72 h-72 bg-gray-600  flex items-center justify-center overflow-hidden">
+              {promo.img ? (
+                <Image
+                  src={promo.img}
+                  alt={promo.title}
+                  width={288}
+                  height={288}
+                  className="object-cover w-full h-full"
+                />
+              ) : (
+                <span className="text-white text-lg">{promo.title}</span>
               )}
             </div>
 
-            <button className="w-full bg-[#0066a2] hover:bg-[#00548b] text-white text-sm font-bold py-3 flex items-center justify-center gap-2 transition">
-              VOIR PLUS <ArrowRight size={16} />
-            </button>
+            <div className="w-72 mt-2 flex flex-col">
+              <button className="w-full bg-gray-600 text-white text-xl font-normal py-2 rounded-none">
+                VOIR PLUS
+              </button>
+            </div>
           </div>
         ))}
       </div>
